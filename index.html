@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relationship Countdown ❤️</title>
+    <title>Infinity Countdown ❤️</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Raleway:wght@600&display=swap');
 
@@ -44,6 +44,13 @@
             border-radius: 10px;
             box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
             min-width: 70px;
+            text-align: center;
+        }
+        .label {
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            margin-top: 5px;
         }
         .info-text {
             font-size: 1.6rem;
@@ -79,15 +86,29 @@
             background-size: cover;
             margin-top: 20px;
         }
+        .extra-gif {
+            width: 150px;
+            height: 150px;
+            background-size: cover;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Time left till our next aniversary🤭🧿</h1>
         <div class="flip-clock" id="countdown"></div>
+        <div class="labels">
+            <span class="label">Days</span>
+            <span class="label">Hours</span>
+            <span class="label">Minutes</span>
+            <span class="label">Seconds</span>
+        </div>
         <p class="info-text" id="days-together"></p>
         <p class="info-text" id="months"></p>
         <div class="teddy-animation"></div>
+       
+        
     </div>
 
     <div class="breakup-counter">
@@ -112,21 +133,18 @@
             
             document.getElementById("countdown").innerHTML = `
                 <div class='flip-card'>${String(days).padStart(2, '0')}</div>
-                <span>:</span>
                 <div class='flip-card'>${String(hours).padStart(2, '0')}</div>
-                <span>:</span>
                 <div class='flip-card'>${String(minutes).padStart(2, '0')}</div>
-                <span>:</span>
                 <div class='flip-card'>${String(seconds).padStart(2, '0')}</div>
             `;
             
             // Calculate months together
             const monthDiff = (now.getFullYear() - startDate.getFullYear()) * 12 + (now.getMonth() - startDate.getMonth());
-            document.getElementById("months").innerText = `It's our  ${monthDiff}th month together and a forever to go🥹🧿`;
+            document.getElementById("months").innerText = `It's our ${monthDiff}th month together and a forever to go🥹🧿`;
             
             // Calculate days together
             const daysTogether = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
-            document.getElementById("days-together").innerText = `We've been together for ${daysTogether} days😭🧿🫶`;
+            document.getElementById("days-together").innerText = `We've been together for ${daysTogether} days😭🫶🧿`;
         }
         
         function increaseBreakupCount() {
